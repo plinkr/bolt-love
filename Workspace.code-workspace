@@ -25,6 +25,7 @@
     "cSpell.words": [
       "LÖVE",
       "ovaltutu"
-    ]
+    ],
+    "stylua.targetReleaseVersion": "latest"
   }
 }
