@@ -94,104 +94,7 @@ local colors = {
 }
 
 -- Sprites del protagonista (matrices 16x16 con animación)
-local playerSprites = {
-  idle = {
-    {
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0 },
-      { 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0 },
-    },
-    {
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0 },
-      { 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0 },
-    },
-  },
-  running = {
-    {
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 },
-    },
-    {
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0 },
-    },
-  },
-  dead = {
-    {
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0 },
-      { 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0 },
-    },
-  },
-}
+local playerSprites = require("player_sprites")
 
 -- Variables globales del juego
 local ticks = 0
@@ -207,8 +110,10 @@ local hiScore = 0
 local gameState = "playing"
 local gameOverTimer = 0
 local sparks = {} -- Chispas en las bifurcaciones
--- Variables para almacenar las fuentes
-local bigFont, instructionsFont, pixelFont, smallerInstructionFont
+
+-- Cargar la fuente personalizada
+local CustomFont = require("font")
+CustomFont:init() -- Calcular anchos de los glifos
 
 -- Variables para efectos visuales
 local scorePopups = {}
@@ -245,16 +150,7 @@ function love.load()
   love.graphics.setDefaultFilter("nearest", "nearest")
 
   -- Crear fuentes pixeladas
-  bigFont = love.graphics.newFont("8-bit-pusab.ttf", 56)
-  bigFont:setFilter("nearest", "nearest")
-
-  instructionsFont = love.graphics.newFont("8-bit-pusab.ttf", 24)
-  instructionsFont:setFilter("nearest", "nearest")
-  smallerInstructionFont = love.graphics.newFont("8-bit-pusab.ttf", 20)
-
-  pixelFont = love.graphics.newFont("8-bit-pusab.ttf", 32)
-  pixelFont:setFilter("nearest", "nearest")
-  love.graphics.setFont(pixelFont)
+  -- Ya no se cargan las fuentes TTF
 
   -- Inicializar el juego
   initGame()
@@ -840,22 +736,18 @@ function love.draw()
 
   -- UI: Dibujar puntuación y información con fuente pixelada, solo si no estamos en attract mode
   if not attractMode then
-    love.graphics.setFont(pixelFont)
     love.graphics.setColor(colors.white)
-    love.graphics.print(score, 10, 10)
-    -- Tamaño del texto completo
+    CustomFont:drawText(tostring(score), 10, 10, 5)
     local hiScoreText = "HI: " .. hiScore
-    -- El ancho en píxeles
-    local textWidth = love.graphics.getFont():getWidth(hiScoreText)
-    -- Dibujar el texto del HiScore a la derecha de la pantalla
-    love.graphics.print(hiScoreText, 800 - textWidth - 10, 10) -- 10px de margen derecho
+    local textWidth = CustomFont:getTextWidth(hiScoreText, 5)
+    CustomFont:drawText(hiScoreText, 800 - textWidth - 10, 10, 5)
   end
 
   -- Dibujar popups de puntuación
   for _, popup in ipairs(scorePopups) do
     local alpha = popup.timer / 60
     love.graphics.setColor(colors.green[1], colors.green[2], colors.green[3], alpha)
-    love.graphics.print("+" .. popup.value, popup.pos.x * 8, popup.pos.y * 8)
+    CustomFont:drawText("+" .. popup.value, popup.pos.x * 8, popup.pos.y * 8, 4)
   end
 
   -- Pantalla de Attract Mode
@@ -864,21 +756,19 @@ function love.draw()
     love.graphics.rectangle("fill", 0, 0, 800, 800)
 
     love.graphics.setColor(colors.yellow)
-    love.graphics.setFont(bigFont)
-    love.graphics.print("BOLT-LOVE", 110, 200)
+    CustomFont:drawText("BOLT-LOVE", 100, 200, 10)
 
     love.graphics.setColor(colors.white)
-    love.graphics.setFont(instructionsFont)
-    love.graphics.print("DODGE THE LIGHTNING BOLTS!", 70, 300)
-    love.graphics.print("COLLECT STARS FOR POINTS", 90, 340)
+    CustomFont:drawText("DODGE THE LIGHTNING BOLTS!", 70, 300, 4)
+    CustomFont:drawText("COLLECT STARS FOR POINTS", 90, 340, 4)
 
     -- Instrucción parpadeante
     if attractInstructionVisible then
-      love.graphics.print("PRESS SPACE OR CLICK TO START", 40, 440)
-      love.graphics.print("AND TO CHANGE DIRECTION", 100, 480)
+      CustomFont:drawText("PRESS SPACE OR CLICK TO START", 40, 430, 4)
+      CustomFont:drawText("AND TO CHANGE DIRECTION", 100, 470, 4)
     end
-    love.graphics.setFont(smallerInstructionFont)
-    love.graphics.print("https://github.com/plinkr/bolt-love", 70, 550)
+    love.graphics.setColor(colors.light_blue)
+    CustomFont:drawText("https://github.com/plinkr/bolt-love", 55, 550, 3)
   end
 
   -- Pantalla de Game Over
@@ -887,8 +777,7 @@ function love.draw()
     love.graphics.rectangle("fill", 0, 0, 800, 800)
 
     love.graphics.setColor(colors.red)
-    love.graphics.setFont(bigFont)
-    love.graphics.print("GAME OVER", 120, 300)
+    CustomFont:drawText("GAME OVER", 120, 300, 10)
 
     -- Actualizar el Hi Score
     if score > hiScore then
@@ -897,9 +786,8 @@ function love.draw()
 
     if gameOverTimer > 60 then
       love.graphics.setColor(colors.white)
-      love.graphics.setFont(instructionsFont)
-      love.graphics.print("PRESS SPACE OR CLICK TO RESTART", 10, 420)
-      love.graphics.print("PRESS R TO RESTART ANYTIME", 70, 480)
+      CustomFont:drawText("PRESS SPACE OR CLICK TO RESTART", 8, 420, 4)
+      CustomFont:drawText("PRESS R TO RESTART ANYTIME", 70, 480, 4)
     end
   end
   -- debug info
