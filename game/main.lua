@@ -656,20 +656,34 @@ function love.update(dt)
   end
 end
 
--- Dibujar una estrella con un polígono
+-- Función para dibujar una estrella
 local function drawStar(x, y, r)
+  love.graphics.push()
+  love.graphics.translate(x, y)
+
   local points = {}
   local spikes = 5
-  local step = math.pi / spikes
+  local outerRadius = r
+  local innerRadius = r * 0.6
+  local angleStep = 2 * math.pi / (spikes * 2)
 
+  -- Generar puntos de la estrella
   for i = 0, 2 * spikes - 1 do
-    local radius = (i % 2 == 0) and r or r * 0.5
-    local angle = i * step - math.pi / 2
-    table.insert(points, x + math.cos(angle) * radius)
-    table.insert(points, y + math.sin(angle) * radius)
+    local radius = (i % 2 == 0) and outerRadius or innerRadius
+    local angle = i * angleStep - math.pi / 2
+    table.insert(points, math.cos(angle) * radius)
+    table.insert(points, math.sin(angle) * radius)
   end
 
-  love.graphics.polygon("fill", points)
+  -- Usar triangulación para polígonos cóncavos
+  local triangles = love.math.triangulate(points)
+
+  -- Dibujar cada triángulo
+  for i, triangle in ipairs(triangles) do
+    love.graphics.polygon("fill", triangle)
+  end
+
+  love.graphics.pop()
 end
 
 function love.draw()
